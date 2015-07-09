@@ -104,6 +104,7 @@ end
 service "mysql" do
   supports restart: true
   action server["enable"] ? :enable : :disable
+  provider Chef::Provider::Service::Systemd
 end
 
 # install db to the data directory
